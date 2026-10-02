@@ -15,12 +15,12 @@ class _SignInScreenState extends State<SignInScreen> {
   final TextEditingController _passwordController = TextEditingController();
   bool _isPasswordObscured = true;
 
-  // Menyimpan data akun terdaftar (Email & Password)
+  // nyimpan data akun terdaftar (Email & Password)
   String? _registeredEmail;
   String? _registeredPassword;
 
   void _navigateToSignUp() async {
-    // Membuka SignUpScreen dan menunggu data dikirim kembali setelah pendaftaran selesai
+    // buka SignUpScreen dan nunggu data dikirim balik siap pendaftaran selesai
     final result = await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const SignUpScreen()),
@@ -30,7 +30,7 @@ class _SignInScreenState extends State<SignInScreen> {
       setState(() {
         _registeredEmail = result['email'];
         _registeredPassword = result['password'];
-        // Mengisi otomatis kolom email untuk kemudahan pengguna
+        // ngisi otomatis kolom email biar ga ribet
         _emailController.text = _registeredEmail ?? '';
       });
     }
@@ -50,7 +50,7 @@ class _SignInScreenState extends State<SignInScreen> {
       return;
     }
 
-    // 1. Jika belum pernah mendaftar di SignUp
+    // kalo belum pernah mendaftar di SignUp
     if (_registeredEmail == null || _registeredPassword == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -66,7 +66,7 @@ class _SignInScreenState extends State<SignInScreen> {
       return;
     }
 
-    // 2. Jika email/password yang dimasukkan tidak cocok
+    // kalo email/password yang dimasukkan ga sama
     if (email != _registeredEmail || password != _registeredPassword) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -77,7 +77,7 @@ class _SignInScreenState extends State<SignInScreen> {
       return;
     }
 
-    // 3. Jika sudah mendaftar dan input cocok -> LANGSUNG MASUK KE HOME
+    // kalo udah mendaftar dan input cocok -> LANGSUNG MASUK KE HOME
     Navigator.pushReplacementNamed(context, '/home');
   }
 

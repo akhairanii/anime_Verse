@@ -6,9 +6,9 @@ class Anime {
   final String rating;
   final String totalEpisodes;
   final String description;
-  final bool? isFavorite;
+  bool isFavorite;
 
-  const Anime({
+  Anime({
     required this.id,
     required this.title,
     required this.imagePath,

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import '../widgets/app_scaffold.dart';
 import '../widgets/genre_list.dart';
-import '../widgets/anime_view.dart'; // Impor AnimeView ditambahkan di sini
+import '../widgets/anime_view.dart';
+import 'profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -39,6 +40,21 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
+        // ikon profile
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.person,
+              color: Colors.white,
+              size: screenWidth * 0.07,
+            ),
+            tooltip: 'Profile',
+            onPressed: () {
+              Navigator.pushNamed(context, '/profile');
+            },
+          ),
+          SizedBox(width: screenWidth * 0.02),
+        ],
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),

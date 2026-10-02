@@ -31,7 +31,7 @@ class GenreList extends StatelessWidget {
     final screenHeight = size.height;
 
     return SizedBox(
-      height: screenHeight * 0.065, // Tinggi wadah horizontal scroll
+      height: screenHeight * 0.065,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
@@ -53,7 +53,7 @@ class GenreList extends StatelessWidget {
                 child: InkWell(
                   borderRadius: BorderRadius.circular(screenWidth * 0.06),
                   onTap: () {
-                    // Panggil callback saat genre dipilih
+                    // Panggil callback waktu genre dipilih
                     if (onGenreSelected != null) {
                       onGenreSelected!(genre);
                     }
@@ -65,7 +65,6 @@ class GenreList extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(screenWidth * 0.06),
-                      // Bedakan warna background antara item aktif & non-aktif
                       color: isActive
                           ? const Color(0xFF00ADB5) // Warna aksen saat aktif
                           : const Color(0xFF0B395E), // Warna dasar saat tidak aktif

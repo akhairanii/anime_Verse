@@ -30,7 +30,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
       final matchesSearch = anime.title
           .toLowerCase()
           .contains(_searchController.text.toLowerCase());
-      final isFav = anime.isFavorite ?? false; // Memastikan hanya anime favorit yang diambil
+      final isFav = anime.isFavorite ?? false; // mastiin anime favorit aja yang ditampilin
       return isFav && matchesSearch;
     }).toList();
 

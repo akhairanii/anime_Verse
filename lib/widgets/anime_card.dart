@@ -25,7 +25,7 @@ class AnimeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigasi ke DetailScreen dengan mengirimkan data anime yang diklik
+        // Navigasi ke DetailScreen
         Navigator.push(
           context,
           MaterialPageRoute(
