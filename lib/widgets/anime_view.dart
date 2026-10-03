@@ -43,10 +43,6 @@ class AnimeView extends StatelessWidget {
                 id: anime.id,
                 title: anime.title,
                 imagePath: anime.imagePath,
-                genre: anime.genre,
-                rating: anime.rating.toString(),
-                totalEpisodes: anime.totalEpisodes.toString(),
-                description: anime.description,
               );
             },
           );
